@@ -1,6 +1,12 @@
+# imports
 from selenium import webdriver
-driver = webdriver.Chrome()
-driver.get("https://www.edmontonrealestate.pro/")
-# Keep the browser window open until you're ready to close it
-input("Press Enter to close the browser...")
-driver.quit()
+
+# scroller class
+class WebScroller:
+    def __init__(self):
+        self.driver = webdriver.Chrome()
+    
+    def browse(self, url):
+        self.driver.get(url)
+        input("Press Enter to close the browser...")
+        self.driver.quit()
