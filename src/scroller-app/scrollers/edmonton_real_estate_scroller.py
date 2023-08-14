@@ -1,18 +1,29 @@
 from scrollers.web_scroller import WebScroller
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
-# scroller class
+# browses edmonton real estate website
 class EdmontonRealEstateScroller(WebScroller):
     def __init__(self):
         self.driver = webdriver.Chrome()
     
     def browse(self, url):
         self.driver.get(url)
-        input("Press Enter to close the browser...")
-        self.driver.quit()
+        self.driver.maximize_window()
     
     def get_next_page(self):
         print("get next")
 
     def get_previous_page(self):
         print("get previous")
+    
+    def get_communities(self, zone):
+        list_links = []
+        communities = self.driver.find_elements(By.CLASS_NAME, "communities-nav")
+        for community in communities:
+            searched_zone = community.find_elements(By.ID, zone)
+            if len(searched_zone) > 0:
+                communities_in_zone = community.find_element(By.CLASS_NAME, "nav").find_elements(By.TAG_NAME, 'a')
+                for anchor in communities_in_zone:
+                    list_links.append(anchor.get_attribute('href'))
+        return list_links
