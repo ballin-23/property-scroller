@@ -1,4 +1,4 @@
-from scroller import WebScroller
+from web_scroller import WebScroller
 
 scroller = WebScroller()
 scroller.browse("https://www.edmontonrealestate.pro/")
