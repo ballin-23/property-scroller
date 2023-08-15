@@ -14,7 +14,7 @@ class EdmontonRealEstateScroller(WebScroller):
     def get_next_page(self):
         self.driver.find_element(By.XPATH, "//a[@title='Next Page']").click()
     
-    def get_pages(self):
+    def get_total_pages(self):
         pagination = self.driver.find_element(By.CLASS_NAME, "pagination")
         anchor_tags = pagination.find_elements(By.TAG_NAME, "a")
         page_numbers = []
