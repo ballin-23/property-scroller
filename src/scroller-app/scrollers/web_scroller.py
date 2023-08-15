@@ -10,8 +10,4 @@ class WebScroller(ABC):
     def get_next_page(self):
         pass
 
-    @abstractmethod
-    def get_previous_page(self):
-        pass
-
 
