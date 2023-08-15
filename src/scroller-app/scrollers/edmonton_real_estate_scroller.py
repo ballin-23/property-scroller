@@ -12,7 +12,7 @@ class EdmontonRealEstateScroller(WebScroller):
         self.driver.maximize_window()
     
     def get_next_page(self):
-        next_button = self.driver.find_element(By.XPATH, "//a[@title='Next Page']").click()
+        self.driver.find_element(By.XPATH, "//a[@title='Next Page']").click()
     
     def get_pages(self):
         pagination = self.driver.find_element(By.CLASS_NAME, "pagination")
