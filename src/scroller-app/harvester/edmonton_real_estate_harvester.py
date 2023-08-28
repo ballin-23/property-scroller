@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from harvester.harvester import Harvester
 
-# browses edmonton real estate website
+# this extracts data from a web page of properties
 class EdmontonRealEstateHarvester(Harvester):
     def __init__(self, driver):
         self.driver = driver
@@ -20,6 +20,6 @@ class EdmontonRealEstateHarvester(Harvester):
         property_data = property.find_elements(By.CLASS_NAME, "teaser__additional-info")
         for data in property_data:
             print(data.text)
-        print(address.text)
-        print(property.get_attribute("href"))
+        # print(address.text)
+        # print(property.get_attribute("href"))
 
