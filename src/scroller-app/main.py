@@ -10,7 +10,9 @@ scroller.browse("https://www.edmontonrealestate.pro/central-edmonton/downtown.ph
 print("loaded")
 number_of_pages = scroller.get_total_pages()
 for i in range(1,number_of_pages):
-    harvester.getProperties()
+    propreties = harvester.getProperties()
+    for property in propreties:
+        harvester.returnPropertyInformation(property)
     scroller.get_next_page()
     print("got page", i+1)
     time.sleep(0.5)
