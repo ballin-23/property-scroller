@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 
 # browses edmonton real estate website
 class EdmontonRealEstateScroller(WebScroller):
-    def __init__(self):
-        self.driver = webdriver.Chrome()
+    def __init__(self, driver):
+        self.driver = driver
     
     def browse(self, url):
         self.driver.get(url)
