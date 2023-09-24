@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from harvester.harvester import Harvester
 from harvester.property import Property
+from harvester.property_types import PropertyType
 
 # this extracts data from a web page of properties
 class EdmontonRealEstateHarvester(Harvester):
