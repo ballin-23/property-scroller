@@ -17,6 +17,7 @@ class EdmontonRealEstateHarvester(Harvester):
     
     def returnPropertyInformation(self, property):
         address = property.find_element(By.CLASS_NAME, "teaser__address")
+        print(address.text)
         property_data = property.find_elements(By.CLASS_NAME, "teaser__additional-info")
         for data in property_data:
             print(data.text)
