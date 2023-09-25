@@ -27,10 +27,8 @@ class EdmontonRealEstateHarvester(Harvester):
         property_data = property.find_elements(By.CLASS_NAME, "teaser__additional-info")
         for i in range(len(property_data)):
             if i == 0:
-                # handle the logic for storing the type of property
                 current_property.setPropertyType(property_data[i].text)
             else:
-                # handle the logic to split text and return bedrooms, bathrooms and sqft
                 current_property.setPropertyInformation(property_data[i].text)
         print("bedrooms: ", current_property.bedrooms)
         print("bathrooms: ", current_property.bathrooms)
