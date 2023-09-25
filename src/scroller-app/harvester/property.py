@@ -6,3 +6,6 @@ class Property:
         self.bathrooms = bathrooms
         self.squarefootage = squarefootage
         self.propertyType = propertyType
+    
+    def __init__(self):
+        pass

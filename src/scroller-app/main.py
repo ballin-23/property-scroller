@@ -15,8 +15,12 @@ if __name__ == "__main__":
     for i in range(1,number_of_pages):
         propreties = harvester.getProperties()
         for property in propreties:
-            harvester.returnPropertyInformation(property)
+            try:
+                harvester.returnPropertyInformation(property)
+            except Exception as e:
+                print(f"an error occured: {e}")
+
         scroller.get_next_page()
         print("got page", i+1)
-        time.sleep(0.5)
+        time.sleep(0.3)
     time.sleep(40)
