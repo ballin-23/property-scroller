@@ -39,6 +39,6 @@ class EdmontonRealEstateHarvester(Harvester):
         return property
     
     def determinePropertyType(self, description):
-        pass
+        if 
             
 
