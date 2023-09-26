@@ -10,4 +10,8 @@ class Harvester(ABC):
     def returnPropertyInformation(self):
         pass
 
+    @abstractmethod
+    def getCommunityLinks(self):
+        pass
+
 

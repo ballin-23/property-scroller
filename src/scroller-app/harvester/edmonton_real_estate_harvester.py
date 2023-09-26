@@ -36,5 +36,8 @@ class EdmontonRealEstateHarvester(Harvester):
         print("type: ", current_property.propertyType)
         print("sqft: ", current_property.squarefootage)
         return current_property
+
+    def getCommunityLinks(self):
+        pass
             
 
