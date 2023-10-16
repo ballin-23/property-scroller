@@ -8,7 +8,6 @@ if __name__ == "__main__":
     driver = webdriver.Chrome()
     scroller = EdmontonRealEstateScroller(driver)
     harvester = EdmontonRealEstateHarvester(driver)
-    #TODO write code to get the link of all communities
     scroller.browse("https://www.edmontonrealestate.pro/communities.php")
     print("loaded")
     links = harvester.getCommunityLinks()
