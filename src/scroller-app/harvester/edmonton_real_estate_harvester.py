@@ -38,6 +38,16 @@ class EdmontonRealEstateHarvester(Harvester):
         return current_property
 
     def getCommunityLinks(self):
-        pass
+        links = []
+        zonesContainer = self.driver.find_element(By.ID, "community-container")
+        communitiesContainer = zonesContainer.find_elements(By.CLASS_NAME, "community-box")
+        for communities in communitiesContainer:
+            allCommunities = communities.find_elements(By.CLASS_NAME, "nav")
+            for community in allCommunities:
+                linkss = community.find_elements(By.TAG_NAME, 'a')
+                for link in linkss:
+                    print(link.get_attribute('href'))
+                    links.append(link.get_attribute('href'))
+        return links
             
 
